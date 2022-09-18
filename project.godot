@@ -8,6 +8,16 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "CharacterBody3D",
+"class": &"Player",
+"language": &"GDScript",
+"path": "res://player.gd"
+}]
+_global_script_class_icons={
+"Player": ""
+}
+
 [application]
 
 config/name="Halloween2022"

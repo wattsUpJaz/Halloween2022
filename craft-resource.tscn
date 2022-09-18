@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://balys50m7m6th"]
+
+[ext_resource type="Script" path="res://craft-resource.gd" id="1_7exjs"]
+[ext_resource type="Texture2D" uid="uid://ca60i1p6x4pa3" path="res://assets/pumpkin.png" id="2_l56f1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3h1m0"]
+size = Vector3(1.204, 1, 0.929989)
+
+[node name="Craft Resource" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.457135, 0)
+script = ExtResource("1_7exjs")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_3h1m0")
+
+[node name="Sprite3d" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.125612, 0.00348943, 0)
+texture = ExtResource("2_l56f1")
+
+[connection signal="body_entered" from="." to="." method="_on_craft_resource_body_entered"]
