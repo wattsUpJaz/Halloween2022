@@ -38,17 +38,20 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PlayerUI"]
+layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 26.0
 grow_horizontal = 2
 
 [node name="HealthLabel" type="Label" parent="PlayerUI/HBoxContainer"]
+layout_mode = 2
 offset_right = 60.0
 offset_bottom = 26.0
 text = "Health: "
 
 [node name="HealthCount" type="Label" parent="PlayerUI/HBoxContainer"]
+layout_mode = 2
 offset_left = 64.0
 offset_right = 92.0
 offset_bottom = 26.0
