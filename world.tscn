@@ -17,6 +17,15 @@ script = ExtResource("1_75vlu")
 [node name="Player" parent="." instance=ExtResource("1_fumg7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0695372, 0)
 
+[node name="HBoxContainer" parent="Player/PlayerUI" index="0"]
+layout_mode = 3
+
+[node name="HealthLabel" parent="Player/PlayerUI/HBoxContainer" index="0"]
+layout_mode = 3
+
+[node name="HealthCount" parent="Player/PlayerUI/HBoxContainer" index="1"]
+layout_mode = 3
+
 [node name="Ground" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="Ground"]
