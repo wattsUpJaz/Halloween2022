@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfkpnxpgu7qfv"]
+[gd_scene load_steps=6 format=3 uid="uid://drpv3jvnbtdpy"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_75vlu"]
-[ext_resource type="PackedScene" uid="uid://ie6l7jgk0e75" path="res://player.tscn" id="1_fumg7"]
+[ext_resource type="PackedScene" uid="uid://bmvbwsvcvxiln" path="res://player/player.tscn" id="1_fumg7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nocyo"]
 albedo_color = Color(0.494118, 0.643137, 0.447059, 1)
@@ -15,16 +15,6 @@ material = SubResource("StandardMaterial3D_nocyo")
 script = ExtResource("1_75vlu")
 
 [node name="Player" parent="." instance=ExtResource("1_fumg7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0695372, 0)
-
-[node name="HBoxContainer" parent="Player/PlayerUI" index="0"]
-layout_mode = 3
-
-[node name="HealthLabel" parent="Player/PlayerUI/HBoxContainer" index="0"]
-layout_mode = 3
-
-[node name="HealthCount" parent="Player/PlayerUI/HBoxContainer" index="1"]
-layout_mode = 3
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
@@ -39,5 +29,3 @@ shape = SubResource("WorldBoundaryShape3D_i55sf")
 [node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.88439, 11.2848, -3.97996)
 shadow_blur = 0.0
-
-[editable path="Player"]

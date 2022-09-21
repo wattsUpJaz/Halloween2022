@@ -1,0 +1,127 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmvbwsvcvxiln"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_j84q3"]
+[ext_resource type="Texture2D" uid="uid://bp14e6il0gjmg" path="res://icon.svg" id="2_q8q7u"]
+[ext_resource type="Script" path="res://player/health-stat.gd" id="3_1qgfq"]
+[ext_resource type="LabelSettings" uid="uid://b4euba1c38cvd" path="res://resources/label-settings.tres" id="4_5bi7y"]
+[ext_resource type="Script" path="res://player/food-stat.gd" id="4_f7ind"]
+[ext_resource type="Script" path="res://player/stamina-stat.gd" id="5_gv3ee"]
+[ext_resource type="Script" path="res://player/courage-stat.gd" id="6_xeesl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wkvs5"]
+size = Vector3(1.304, 0.777, 0.729249)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_j84q3")
+
+[node name="Sprite3d" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.602423, 0)
+billboard = 1
+alpha_cut = 2
+texture = ExtResource("2_q8q7u")
+
+[node name="Camera3d" type="Camera3D" parent="Sprite3d"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 9.596)
+projection = 1
+size = 15.2532
+
+[node name="Label3d" type="Label3D" parent="Sprite3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
+visible = false
+pixel_size = 0.01
+text = "0"
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.52215, 0, 0, 0, 1, 0, 0.606601, 0)
+shape = SubResource("BoxShape3D_wkvs5")
+
+[node name="PlayerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI"]
+offset_bottom = 26.0
+
+[node name="HealthStat" type="BoxContainer" parent="PlayerUI/VBoxContainer"]
+offset_right = 204.0
+offset_bottom = 48.0
+script = ExtResource("3_1qgfq")
+
+[node name="Label" type="Label" parent="PlayerUI/VBoxContainer/HealthStat"]
+offset_right = 120.0
+offset_bottom = 48.0
+text = "Health: "
+label_settings = ExtResource("4_5bi7y")
+
+[node name="Count" type="Label" parent="PlayerUI/VBoxContainer/HealthStat"]
+offset_left = 124.0
+offset_right = 178.0
+offset_bottom = 48.0
+text = "100"
+label_settings = ExtResource("4_5bi7y")
+
+[node name="FoodStat" type="BoxContainer" parent="PlayerUI/VBoxContainer"]
+offset_top = 52.0
+offset_right = 204.0
+offset_bottom = 100.0
+script = ExtResource("4_f7ind")
+
+[node name="Label" type="Label" parent="PlayerUI/VBoxContainer/FoodStat"]
+offset_right = 94.0
+offset_bottom = 48.0
+text = "Food: "
+label_settings = ExtResource("4_5bi7y")
+
+[node name="Count" type="Label" parent="PlayerUI/VBoxContainer/FoodStat"]
+offset_left = 98.0
+offset_right = 152.0
+offset_bottom = 48.0
+text = "100"
+label_settings = ExtResource("4_5bi7y")
+
+[node name="Timer" type="Timer" parent="PlayerUI/VBoxContainer/FoodStat"]
+autostart = true
+
+[node name="StaminaStat" type="BoxContainer" parent="PlayerUI/VBoxContainer"]
+offset_top = 104.0
+offset_right = 204.0
+offset_bottom = 152.0
+script = ExtResource("5_gv3ee")
+
+[node name="Label" type="Label" parent="PlayerUI/VBoxContainer/StaminaStat"]
+offset_right = 146.0
+offset_bottom = 48.0
+text = "Stamina: "
+label_settings = ExtResource("4_5bi7y")
+
+[node name="Count" type="Label" parent="PlayerUI/VBoxContainer/StaminaStat"]
+offset_left = 150.0
+offset_right = 204.0
+offset_bottom = 48.0
+text = "100"
+label_settings = ExtResource("4_5bi7y")
+
+[node name="CourageStat" type="BoxContainer" parent="PlayerUI/VBoxContainer"]
+offset_top = 156.0
+offset_right = 204.0
+offset_bottom = 204.0
+script = ExtResource("6_xeesl")
+
+[node name="Label" type="Label" parent="PlayerUI/VBoxContainer/CourageStat"]
+offset_right = 146.0
+offset_bottom = 48.0
+text = "Courage: "
+label_settings = ExtResource("4_5bi7y")
+
+[node name="Count" type="Label" parent="PlayerUI/VBoxContainer/CourageStat"]
+offset_left = 150.0
+offset_right = 204.0
+offset_bottom = 48.0
+text = "100"
+label_settings = ExtResource("4_5bi7y")
+
+[connection signal="timeout" from="PlayerUI/VBoxContainer/FoodStat/Timer" to="PlayerUI/VBoxContainer/FoodStat" method="_on_timer_timeout"]

@@ -7,14 +7,15 @@ const SPEED = 5.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-# inventory
-var pumpkins = 0
-
 # stats
-var health = 49
+var health = 100
+var food = 100
+var stamina = 100
+var courage = 100
 
 func _ready():
 	randomize()
+	$PlayerUI/VBoxContainer/HealthStat.health = health
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -35,10 +36,3 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, speed)
 
 	move_and_slide()
-
-func add_pumpkin():
-	health += 10
-
-func _on_health_timer_timeout():
-	health -= 1
-	$PlayerUI/HBoxContainer/HealthCount.text = str(health)
