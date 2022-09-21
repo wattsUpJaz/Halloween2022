@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1hpuhuohdqts"]
+
+[ext_resource type="PackedScene" uid="uid://chhnwt5i2hiad" path="res://items/item.tscn" id="1_5yl2u"]
+[ext_resource type="Script" path="res://items/pumpkin.gd" id="2_y7ov6"]
+[ext_resource type="Texture2D" uid="uid://ca60i1p6x4pa3" path="res://assets/pumpkin.png" id="3_dj7ft"]
+
+[node name="Pumpkin" instance=ExtResource("1_5yl2u")]
+script = ExtResource("2_y7ov6")
+
+[node name="Sprite3d" parent="." index="1"]
+texture = ExtResource("3_dj7ft")

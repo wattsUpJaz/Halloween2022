@@ -1,6 +1,6 @@
 extends Node3D
 
-var craft_rsrc_scene: PackedScene = preload("res://craft-resource.tscn")
+var craft_rsrc_scene: PackedScene = preload("res://items/pumpkin.tscn")
 var rsrc_count: int = 5
 
 func _ready():
