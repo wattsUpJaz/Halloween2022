@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dht24hm8pxvum"]
+
+[ext_resource type="Script" path="res://player/courage-stat.gd" id="1_doutd"]
+[ext_resource type="LabelSettings" uid="uid://b4euba1c38cvd" path="res://resources/label-settings.tres" id="2_xr8kb"]
+
+[node name="CourageStat" type="BoxContainer"]
+offset_top = 156.0
+offset_right = 204.0
+offset_bottom = 204.0
+script = ExtResource("1_doutd")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 146.0
+offset_bottom = 48.0
+text = "Courage: "
+label_settings = ExtResource("2_xr8kb")
+
+[node name="Count" type="Label" parent="."]
+offset_left = 150.0
+offset_right = 204.0
+offset_bottom = 48.0
+text = "100"
+label_settings = ExtResource("2_xr8kb")

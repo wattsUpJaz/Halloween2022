@@ -9,13 +9,43 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Stat",
+"class": &"CourageStat",
+"language": &"GDScript",
+"path": "res://player/courage-stat.gd"
+}, {
+"base": "Stat",
+"class": &"FoodStat",
+"language": &"GDScript",
+"path": "res://player/food-stat.gd"
+}, {
+"base": "Stat",
+"class": &"HealthStat",
+"language": &"GDScript",
+"path": "res://player/health-stat.gd"
+}, {
 "base": "CharacterBody3D",
 "class": &"Player",
 "language": &"GDScript",
 "path": "res://player/player.gd"
+}, {
+"base": "Stat",
+"class": &"StaminaStat",
+"language": &"GDScript",
+"path": "res://player/stamina-stat.gd"
+}, {
+"base": "BoxContainer",
+"class": &"Stat",
+"language": &"GDScript",
+"path": "res://player/stat.gd"
 }]
 _global_script_class_icons={
-"Player": ""
+"CourageStat": "",
+"FoodStat": "",
+"HealthStat": "",
+"Player": "",
+"StaminaStat": "",
+"Stat": ""
 }
 
 [application]

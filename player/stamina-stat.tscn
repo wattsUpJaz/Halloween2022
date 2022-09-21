@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwteokf3yiwd6"]
+
+[ext_resource type="Script" path="res://player/stamina-stat.gd" id="1_2bajp"]
+[ext_resource type="LabelSettings" uid="uid://b4euba1c38cvd" path="res://resources/label-settings.tres" id="2_ki11o"]
+
+[node name="StaminaStat" type="BoxContainer"]
+offset_top = 104.0
+offset_right = 204.0
+offset_bottom = 152.0
+script = ExtResource("1_2bajp")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 146.0
+offset_bottom = 48.0
+text = "Stamina: "
+label_settings = ExtResource("2_ki11o")
+
+[node name="Count" type="Label" parent="."]
+offset_left = 150.0
+offset_right = 204.0
+offset_bottom = 48.0
+text = "100"
+label_settings = ExtResource("2_ki11o")

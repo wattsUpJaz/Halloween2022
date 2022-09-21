@@ -1,4 +1,5 @@
-extends BoxContainer
+extends Stat
+
+class_name CourageStat
 
 signal courage_change
-var courage = 100

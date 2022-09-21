@@ -4,10 +4,8 @@ extends Area3D
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _on_craft_resource_body_entered(body: Node3D):
-	queue_free()
+	var player = body as Player
+	if player:
+		player.add_food(10)
+		queue_free()
