@@ -14,7 +14,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0816095, 0)
 shape = SubResource("BoxShape3D_3h1m0")
 
 [node name="Sprite3d" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125612, 0.190889, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.191, 0)
 billboard = 1
 
 [connection signal="body_entered" from="." to="." method="_on_craft_resource_body_entered"]

@@ -9,5 +9,7 @@ func _affect_player(player: Player):
 func _on_craft_resource_body_entered(body: Node3D):
 	var player = body as Player
 	if player:
-		_affect_player(player)
+		$CollisionShape3d.disabled = true
+		$Sprite3d.visible = false
+		await _affect_player(player)
 		queue_free()

@@ -2,7 +2,7 @@ extends Node3D
 
 var pumpkin_scene: PackedScene = preload("res://items/pumpkin.tscn")
 var acorn_scene: PackedScene = preload("res://items/acorn.tscn")
-var dandelion_scene: PackedScene = preload("res://items/dandelion.tscn")
+var dandelion_scene: PackedScene = preload("res://items/taffy.tscn")
 var rsrc_count: int = 5
 
 func _ready():
