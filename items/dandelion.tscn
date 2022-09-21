@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1m3hymwy3i4v"]
+
+[ext_resource type="PackedScene" uid="uid://chhnwt5i2hiad" path="res://items/item.tscn" id="1_7k8kb"]
+[ext_resource type="Script" path="res://items/dandelion.gd" id="2_7ewsm"]
+[ext_resource type="Texture2D" uid="uid://bpkrdqjsf53pw" path="res://assets/dandelion.png" id="2_ymw8n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tjhnf"]
+size = Vector3(0.913506, 1, 0.565607)
+
+[node name="Dandelion" instance=ExtResource("1_7k8kb")]
+script = ExtResource("2_7ewsm")
+
+[node name="CollisionShape3d" parent="." index="0"]
+shape = SubResource("BoxShape3D_tjhnf")
+
+[node name="Sprite3d" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00474118, 0.190889, 0)
+texture = ExtResource("2_ymw8n")

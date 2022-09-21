@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://uacg0trfj5h4"]
+
+[ext_resource type="PackedScene" uid="uid://chhnwt5i2hiad" path="res://items/item.tscn" id="1_6d1qt"]
+[ext_resource type="Script" path="res://items/taffy.gd" id="2_eqdk2"]
+
+[node name="Taffy" instance=ExtResource("1_6d1qt")]
+script = ExtResource("2_eqdk2")
+
+[node name="Timer" type="Timer" parent="." index="2"]
+wait_time = 3.0

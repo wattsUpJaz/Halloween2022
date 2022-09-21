@@ -16,8 +16,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready():
 	randomize()
 
-	
-
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -40,3 +38,12 @@ func _physics_process(delta):
 
 func add_food(value: int):
 	stats["food"].add(value)
+
+func add_courage(value: int):
+	stats["courage"].add(value)
+
+func add_stamina(value: int):
+	stats["stamina"].add(value)
+	
+func add_health(value: int):
+	stats["health"].add(value)
