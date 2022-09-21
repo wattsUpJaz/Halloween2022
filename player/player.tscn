@@ -14,7 +14,7 @@ size = Vector3(1.304, 0.777, 0.729249)
 script = ExtResource("1_j84q3")
 
 [node name="Sprite3d" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.602423, 0)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0.602423, 0)
 billboard = 1
 alpha_cut = 2
 texture = ExtResource("2_q8q7u")
@@ -43,12 +43,17 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PlayerUI"]
+layout_mode = 0
 offset_bottom = 26.0
 
 [node name="HealthStat" parent="PlayerUI/VBoxContainer" instance=ExtResource("3_msjta")]
+layout_mode = 2
 
 [node name="FoodStat" parent="PlayerUI/VBoxContainer" instance=ExtResource("5_sbay1")]
+layout_mode = 2
 
 [node name="StaminaStat" parent="PlayerUI/VBoxContainer" instance=ExtResource("5_tlshu")]
+layout_mode = 2
 
 [node name="CourageStat" parent="PlayerUI/VBoxContainer" instance=ExtResource("6_qcwah")]
+layout_mode = 2
