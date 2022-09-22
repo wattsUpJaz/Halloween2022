@@ -43,6 +43,11 @@ _global_script_classes=[{
 "class": &"Stat",
 "language": &"GDScript",
 "path": "res://player/stat.gd"
+}, {
+"base": "Node3D",
+"class": &"WorldGenerator",
+"language": &"GDScript",
+"path": "res://world-generator.gd"
 }]
 _global_script_class_icons={
 "CourageStat": "",
@@ -51,7 +56,8 @@ _global_script_class_icons={
 "Item": "",
 "Player": "",
 "StaminaStat": "",
-"Stat": ""
+"Stat": "",
+"WorldGenerator": ""
 }
 
 [application]

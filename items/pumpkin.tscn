@@ -5,8 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://ca60i1p6x4pa3" path="res://assets/pumpkin.png" id="3_dj7ft"]
 
 [node name="Pumpkin" instance=ExtResource("1_5yl2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.617606, 0)
 script = ExtResource("2_y7ov6")
 
+[node name="CollisionShape3d" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
 [node name="Sprite3d" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0992708, 0.190889, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0992708, 0, 0)
 texture = ExtResource("3_dj7ft")

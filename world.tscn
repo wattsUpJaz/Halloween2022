@@ -1,21 +1,170 @@
-[gd_scene load_steps=6 format=3 uid="uid://drpv3jvnbtdpy"]
+[gd_scene load_steps=11 format=3 uid="uid://drpv3jvnbtdpy"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_75vlu"]
 [ext_resource type="PackedScene" uid="uid://bmvbwsvcvxiln" path="res://player/player.tscn" id="1_fumg7"]
+[ext_resource type="Script" path="res://world-generator.gd" id="3_x1vma"]
+[ext_resource type="Texture2D" uid="uid://bkidxws1rkojb" path="res://assets/tileset_test.png" id="4_h6koq"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wanhp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nocyo"]
+resource_local_to_scene = true
 albedo_color = Color(0.494118, 0.643137, 0.447059, 1)
+albedo_texture = SubResource("ViewportTexture_wanhp")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0brsw"]
+resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_nocyo")
+size = Vector2(3, 3)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i55sf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nf7c"]
+texture = ExtResource("4_h6koq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_left_corner = 1
+0:0/0/terrains_peering_bit/left_side = 1
+0:0/0/terrains_peering_bit/top_left_corner = 1
+0:0/0/terrains_peering_bit/top_side = 1
+0:0/0/terrains_peering_bit/top_right_corner = 1
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+1:0/0/terrains_peering_bit/top_left_corner = 1
+1:0/0/terrains_peering_bit/top_side = 1
+1:0/0/terrains_peering_bit/top_right_corner = 1
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_right_corner = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/bottom_left_corner = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_left_corner = 0
+1:1/0/terrains_peering_bit/top_side = 0
+1:1/0/terrains_peering_bit/top_right_corner = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrains_peering_bit/right_side = 1
+2:1/0/terrains_peering_bit/bottom_right_corner = 1
+2:1/0/terrains_peering_bit/bottom_left_corner = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_left_corner = 0
+2:1/0/terrains_peering_bit/top_right_corner = 1
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrains_peering_bit/right_side = 1
+2:2/0/terrains_peering_bit/bottom_right_corner = 1
+2:2/0/terrains_peering_bit/bottom_side = 1
+2:2/0/terrains_peering_bit/bottom_left_corner = 1
+2:2/0/terrains_peering_bit/top_left_corner = 0
+2:2/0/terrains_peering_bit/top_right_corner = 1
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrains_peering_bit/bottom_right_corner = 0
+3:2/0/terrains_peering_bit/bottom_left_corner = 1
+3:2/0/terrains_peering_bit/top_left_corner = 0
+3:2/0/terrains_peering_bit/top_right_corner = 1
+4:2/0 = 0
+4:2/0/terrain_set = 0
+4:2/0/terrains_peering_bit/bottom_right_corner = 1
+4:2/0/terrains_peering_bit/bottom_left_corner = 0
+4:2/0/terrains_peering_bit/top_left_corner = 1
+4:2/0/terrains_peering_bit/top_right_corner = 0
+2:3/0 = 0
+2:3/0/terrain_set = 0
+2:3/0/terrains_peering_bit/right_side = 1
+2:3/0/terrains_peering_bit/bottom_right_corner = 1
+2:3/0/terrains_peering_bit/bottom_side = 1
+2:3/0/terrains_peering_bit/bottom_left_corner = 1
+2:3/0/terrains_peering_bit/left_side = 1
+2:3/0/terrains_peering_bit/top_left_corner = 1
+2:3/0/terrains_peering_bit/top_side = 1
+2:3/0/terrains_peering_bit/top_right_corner = 1
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrains_peering_bit/bottom_right_corner = 1
+1:2/0/terrains_peering_bit/bottom_side = 1
+1:2/0/terrains_peering_bit/bottom_left_corner = 1
+1:2/0/terrains_peering_bit/top_left_corner = 0
+1:2/0/terrains_peering_bit/top_side = 0
+1:2/0/terrains_peering_bit/top_right_corner = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrains_peering_bit/bottom_right_corner = 1
+0:2/0/terrains_peering_bit/bottom_side = 1
+0:2/0/terrains_peering_bit/bottom_left_corner = 1
+0:2/0/terrains_peering_bit/left_side = 1
+0:2/0/terrains_peering_bit/top_left_corner = 1
+0:2/0/terrains_peering_bit/top_right_corner = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_right_corner = 0
+0:1/0/terrains_peering_bit/bottom_left_corner = 1
+0:1/0/terrains_peering_bit/left_side = 1
+0:1/0/terrains_peering_bit/top_left_corner = 1
+0:1/0/terrains_peering_bit/top_right_corner = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrains_peering_bit/right_side = 1
+2:0/0/terrains_peering_bit/bottom_right_corner = 1
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+2:0/0/terrains_peering_bit/top_left_corner = 1
+2:0/0/terrains_peering_bit/top_side = 1
+2:0/0/terrains_peering_bit/top_right_corner = 1
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrains_peering_bit/bottom_right_corner = 1
+3:0/0/terrains_peering_bit/bottom_left_corner = 0
+3:0/0/terrains_peering_bit/left_side = 0
+3:0/0/terrains_peering_bit/top_left_corner = 0
+3:0/0/terrains_peering_bit/top_side = 0
+3:0/0/terrains_peering_bit/top_right_corner = 0
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrains_peering_bit/right_side = 0
+4:0/0/terrains_peering_bit/bottom_right_corner = 0
+4:0/0/terrains_peering_bit/bottom_left_corner = 1
+4:0/0/terrains_peering_bit/top_left_corner = 0
+4:0/0/terrains_peering_bit/top_side = 0
+4:0/0/terrains_peering_bit/top_right_corner = 0
+4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/terrains_peering_bit/right_side = 0
+4:1/0/terrains_peering_bit/bottom_right_corner = 0
+4:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0/terrains_peering_bit/bottom_left_corner = 0
+4:1/0/terrains_peering_bit/top_left_corner = 1
+4:1/0/terrains_peering_bit/top_right_corner = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrains_peering_bit/bottom_right_corner = 0
+3:1/0/terrains_peering_bit/bottom_side = 0
+3:1/0/terrains_peering_bit/bottom_left_corner = 0
+3:1/0/terrains_peering_bit/left_side = 0
+3:1/0/terrains_peering_bit/top_left_corner = 0
+3:1/0/terrains_peering_bit/top_right_corner = 1
+
+[sub_resource type="TileSet" id="TileSet_ufkk0"]
+tile_size = Vector2i(64, 64)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Path"
+terrain_set_0/terrain_0/color = Color(0.501961, 0.345098, 0.25098, 1)
+terrain_set_0/terrain_1/name = "Dirt"
+terrain_set_0/terrain_1/color = Color(0.309804, 0.203922, 0.141176, 1)
+sources/0 = SubResource("TileSetAtlasSource_4nf7c")
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_75vlu")
 
 [node name="Player" parent="." instance=ExtResource("1_fumg7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0695372, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, 0)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
@@ -30,3 +179,28 @@ shape = SubResource("WorldBoundaryShape3D_i55sf")
 [node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.88439, 11.2848, -3.97996)
 shadow_blur = 0.0
+
+[node name="WorldGenerator" type="Node3D" parent="."]
+script = ExtResource("3_x1vma")
+sector_size = 10.0
+player_path = NodePath("../Player")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(1024, 512)
+render_target_update_mode = 0
+
+[node name="TileMap" type="TileMap" parent="SubViewportContainer/SubViewport"]
+tile_set = SubResource("TileSet_ufkk0")
+format = 2
+layer_0/name = "Ground"
+layer_0/tile_data = PackedInt32Array(131082, 131072, 3, 131081, 131072, 3, 196617, 131072, 3, 262153, 131072, 0, 262154, 131072, 3, 196618, 131072, 3, 196619, 131072, 3, 65545, 131072, 3, 65547, 131072, 3, 196616, 131072, 3, 65544, 131072, 1, 65546, 131072, 3, 262152, 65536, 0, 131080, 131072, 2, 327690, 131072, 0, 327688, 65536, 1, 327691, 131072, 3, 327689, 196608, 1, 262155, 131072, 3, 327692, 131072, 3, 196620, 131072, 3, 262156, 131072, 3, 131084, 131072, 3, 131083, 131072, 3, 65548, 131072, 3, 196615, 131072, 1, 65543, 65536, 1, 131079, 196608, 0, 196614, 65536, 1, 65542, 0, 1, 262150, 65536, 1, 131078, 262144, 1, 262151, 196608, 1, 262149, 65536, 1, 131077, 0, 0, 327687, 65536, 1, 327685, 262144, 0, 196613, 262144, 1, 327686, 65536, 1, 393223, 196608, 0, 393221, 0, 2, 458760, 0, 1, 458758, 0, 2, 393224, 262144, 0, 458761, 65536, 1, 458759, 131072, 2, 393225, 65536, 1, 458762, 65536, 1, 393226, 196608, 1, 458763, 196608, 1, 393227, 131072, 0, 458764, 131072, 0, 393229, 0, 0, 262157, 131072, 3, 327693, 131072, 3, 196621, 0, 2, 131085, 0, 1, 196612, 65536, 0, 65540, 131072, 3, 262148, 65536, 1, 131076, 131072, 3, 327684, 65536, 2, 393222, 262144, 0, 393220, 131072, 3, 458756, 131072, 3, 458757, 131072, 3, 458755, 131072, 3, 327683, 65536, 2, 393219, 131072, 3, 262147, 65536, 1, 196611, 65536, 0, 131075, 131072, 3, 65539, 131072, 3, 65541, 131072, 3, 3, 131072, 3, 5, 131072, 3, 4, 131072, 3, 6, 0, 1, 7, 65536, 1, 524295, 131072, 3, 524293, 131072, 3, 524296, 0, 2, 524294, 131072, 3, 589833, 0, 2, 589831, 131072, 3, 524297, 262144, 0, 589834, 65536, 2, 589832, 131072, 3, 524298, 65536, 1, 589835, 65536, 2, 524299, 65536, 1, 589836, 262144, 0, 524300, 196608, 1, 393228, 131072, 3, 524301, 262144, 2, 458765, 0, 1, 524302, 65536, 2, 393230, 65536, 0, 589838, 131072, 3, 458766, 65536, 1, 589839, 131072, 3, 589837, 131072, 1, 458767, 196608, 0, 655375, 131072, 3, 655373, 131072, 2, 524303, 131072, 2, 655376, 131072, 3, 655374, 131072, 3, 524304, 131072, 3, 589840, 131072, 3, 655377, 131072, 3, 524305, 131072, 3, 589841, 131072, 3, 655378, 131072, 3, 524306, 131072, 3, 589842, 131072, 3, 458769, 131072, 2, 13, 0, 0, 65550, 65536, 1, -65524, 131072, 3, -65522, 0, 0, 65549, 0, 1, 131086, 65536, 1, 12, 131072, 3, 14, 262144, 1, 11, 131072, 3, -65526, 131072, 3, -65525, 131072, 3, 10, 131072, 3, -131062, 131072, 3, -131060, 131072, 3, 9, 131072, 3, -131063, 131072, 3, -131061, 131072, 3, -65527, 131072, 3, 8, 131072, 1, -131064, 131072, 1, -65528, 131072, 1, -131065, 65536, 1, -65530, 0, 1, -131066, 0, 1, -65529, 65536, 1, -65531, 131072, 3, -196603, 131072, 3, -131067, 131072, 3, -65532, 131072, 3, -196604, 131072, 3, -262139, 131072, 3, -262140, 131072, 3, -196605, 131072, 3, -131069, 131072, 3, -131068, 131072, 3, -262141, 131072, 3, -65533, 131072, 3, -65523, 131072, 3, 196622, 65536, 2, 655372, 0, 2, 655371, 131072, 3, 655370, 131072, 3, 655369, 131072, 3, 655368, 131072, 3, 589830, 131072, 3, 589829, 131072, 3, 589828, 131072, 3, 589827, 131072, 3, 655363, 131072, 3, 655364, 131072, 3, 655365, 131072, 3, 655366, 131072, 3, 655367, 131072, 3, 655362, 131072, 3, 655361, 131072, 3, 655360, 131072, 3, 524292, 131072, 3, 524291, 131072, 3, 589826, 131072, 3, 524290, 131072, 3, 458754, 131072, 3, 393218, 131072, 3, 327682, 65536, 2, 262146, 65536, 1, 196610, 65536, 0, 131074, 131072, 3, 65538, 131072, 3, 2, 131072, 3, -65534, 131072, 3, -131070, 131072, 3, -196606, 131072, 3, -262142, 131072, 3, 589825, 131072, 3, 524289, 131072, 3, 458753, 131072, 3, 393217, 131072, 3, 327681, 0, 2, 262145, 262144, 0, 196609, 65536, 0, 131073, 131072, 3, 65537, 131072, 3, 1, 131072, 3, -65535, 131072, 3, -131071, 131072, 3, -196607, 131072, 3, -262143, 131072, 3, 589824, 131072, 3, 524288, 131072, 3, 458752, 131072, 3, 393216, 131072, 3, 327680, 131072, 0, 262144, 65536, 2, 196608, 65536, 0, 131072, 131072, 2, 65536, 131072, 3, 0, 131072, 3, -65536, 131072, 3, -131072, 131072, 3, -196608, 131072, 3, -262144, 131072, 3, 458770, 131072, 3, 393234, 131072, 2, 327698, 131072, 1, 262162, 131072, 1, 196626, 131072, 1, 131090, 131072, 1, 65554, 131072, 1, 18, 196608, 0, -65518, 262144, 1, -131054, 262144, 0, -196590, 65536, 1, -262126, 65536, 0, 393233, 196608, 0, 327697, 65536, 1, 262161, 65536, 1, 196625, 65536, 1, 131089, 65536, 1, 65553, 65536, 1, 17, 65536, 1, -65519, 196608, 1, -131055, 196608, 0, -196591, 262144, 1, -262127, 196608, 2, 458768, 65536, 2, 393232, 65536, 1, 327696, 262144, 1, 262160, 0, 1, 196624, 0, 1, 131088, 0, 1, 65552, 262144, 0, 16, 65536, 1, -65520, 65536, 1, -131056, 262144, 1, -196592, 0, 0, -262128, 0, 2, 393231, 262144, 1, 327695, 0, 0, 262159, 131072, 3, 196623, 131072, 2, 131087, 131072, 1, 65551, 196608, 0, 15, 65536, 1, -65521, 262144, 1, -131057, 0, 0, -196593, 131072, 3, -262129, 131072, 3, 327694, 131072, 3, 262158, 131072, 3, -131058, 131072, 3, -196594, 131072, 3, -262130, 131072, 3, -131059, 131072, 3, -196595, 131072, 3, -262131, 131072, 3, -196596, 131072, 3, -262132, 131072, 3, -196597, 131072, 3, -262133, 131072, 3, -196598, 131072, 3, -262134, 131072, 3, -262135, 65536, 2, -196599, 131072, 3, -262137, 196608, 2, -262136, 262144, 2, -196600, 131072, 1, -196601, 262144, 1, -196602, 0, 0, -262138, 0, 2)
