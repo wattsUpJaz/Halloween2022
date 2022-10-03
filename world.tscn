@@ -27,6 +27,21 @@ script = ExtResource("1_75vlu")
 [node name="Player" parent="." instance=ExtResource("1_fumg7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, 0)
 
+[node name="VBoxContainer" parent="Player/PlayerUI" index="0"]
+layout_mode = 0
+
+[node name="HealthStat" parent="Player/PlayerUI/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="FoodStat" parent="Player/PlayerUI/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="StaminaStat" parent="Player/PlayerUI/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="CourageStat" parent="Player/PlayerUI/VBoxContainer" index="3"]
+layout_mode = 2
+
 [node name="Ground" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="Ground"]

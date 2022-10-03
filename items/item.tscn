@@ -17,4 +17,9 @@ shape = SubResource("BoxShape3D_3h1m0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.191, 0)
 billboard = 1
 
+[node name="Shadow" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0489337, 0.343)
+modulate = Color(0, 0, 0, 1)
+billboard = 1
+
 [connection signal="body_entered" from="." to="." method="_on_craft_resource_body_entered"]
